@@ -14,8 +14,21 @@ export const StreamingText: React.FC<StreamingTextProps> = ({ text }) => {
   }, [text]);
 
   return (
-    <div ref={containerRef} className="streaming-text" style={{ height: '200px', overflowY: 'auto' }}>
-      {text}
+    <div
+      ref={containerRef}
+      className="streaming-text"
+      style={{
+        height: '200px',
+        overflowY: 'auto',
+        padding: '10px',
+        backgroundColor: '#f9f9f9',
+        border: '1px solid #ccc',
+        borderRadius: '5px',
+        marginTop: '20px',
+        whiteSpace: 'pre-wrap',
+      }}
+    >
+      {text.trim() ? text : <span style={{ color: '#888' }}>Start speaking, your words will appear here...</span>}
     </div>
   );
 };

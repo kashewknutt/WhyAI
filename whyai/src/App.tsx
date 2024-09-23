@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { SpeechToText } from './components/SpeechToText';
+import SpeechToText from './components/SpeechToText';
 import { StreamingText } from './components/StreamingText';
 import { QuestionDisplay } from './components/QuestionDisplay';
 import { QuestionGenerator } from './services/QuestionGenerator';
@@ -63,7 +63,7 @@ const App: React.FC = () => {
         {isListening ? 'Stop Listening' : 'Start Listening'}
       </button>
       <SpeechToText onResult={handleSpeechResult} isListening={isListening} />
-      <StreamingText text={text} />
+      <StreamingText text={text} /> {/* Pass the updated text */}
       <QuestionDisplay questions={questions} />
       <div style={{ marginTop: '20px', border: '1px solid #ccc', padding: '10px' }}>
         <h3>Debug Info:</h3>
